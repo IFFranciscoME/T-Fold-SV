@@ -1,0 +1,16 @@
+
+# -- --------------------------------------------------------------------------------------------------- -- #
+# -- Project: T-Fold-SV                                                                                  -- #
+# -- Description: Python Implementation of the T-Fold Sequential Validation Method                       -- #
+# -- script: requirements.txt : text file with the required libraries for the project                    -- #
+# -- Author: IFFranciscoME - if.francisco.me@gmail.com                                                   -- #
+# -- license: GPL-3.0 License                                                                            -- #
+# -- Repository: https://github.com/IFFranciscoME/T-Fold-SV                                              -- #
+# -- --------------------------------------------------------------------------------------------------- -- #
+
+# Run the following in bash console:
+# $ pip instal -r requirements.txt
+
+# -- Generic
+pandas>=1.1.4
+numpy>=1.20

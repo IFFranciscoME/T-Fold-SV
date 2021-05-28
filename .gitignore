@@ -1,3 +1,20 @@
+
+# ---------- Exclude manually ---------- #
+
+# ignore pycharm project folder
+.idea/
+
+# ignore vscode project folder
+.vscode/
+
+# ignore virtual env for development
+t-fold_dev_venv/
+
+# ignore vscode workspace file
+t-fold_dev_workspace.code-workspace
+
+# ----------- -------------- ----------- #
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
