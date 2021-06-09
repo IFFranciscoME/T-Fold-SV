@@ -1,18 +1,23 @@
 
+"""
 # -- --------------------------------------------------------------------------------------------------- -- #
 # -- T-Fold-SV is Time Series Folds for Sequential Validation, the go to alternative for K-Fold-CV       -- #
 # -- --------------------------------------------------------------------------------------------------- -- #
 # -- Description: Python Implementation of the T-Fold Sequential Validation Method                       -- #
-# -- script: requirements.txt : text file with the required libraries for the project                    -- #
+# -- synthetics.py: Synthetic data generation for exploration and testing                                -- #
 # -- Author: IFFranciscoME - if.francisco.me@gmail.com                                                   -- #
 # -- license: GPL-3.0 License                                                                            -- #
 # -- Repository: https://github.com/IFFranciscoME/T-Fold-SV                                              -- #
 # -- --------------------------------------------------------------------------------------------------- -- #
+"""
 
-# Run the following in bash console:
-# $ pip instal -r requirements.txt
+# -- Load libraries for script
+import numpy as np
 
-# -- Generic
-pandas==1.1.4
-numpy==1.20
-scipy==1.6.3
+# ------------------------------------------------------------------------------- RANDOM WALK WITH DRIFT -- # 
+# ------------------------------------------------------------------------------- ---------------------- -- # 
+
+# Single value
+np.random.seed(123) 
+mu, sigma = 0.1, 0.1 # mean and standard deviation
+s = np.cumsum(np.random.normal(mu, sigma, 100))
