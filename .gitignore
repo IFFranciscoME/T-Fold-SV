@@ -14,7 +14,10 @@ t-fold_dev_venv/
 t-fold_dev_workspace.code-workspace
 
 # ignore the files folder
-\files
+/files
+
+# exclude notes
+algorithm.rst
 
 # ----------- -------------- ----------- #
 
