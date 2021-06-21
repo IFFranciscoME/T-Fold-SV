@@ -14,6 +14,9 @@
 # -- Load packages for this script
 import pandas as pd
 
+# -- Load other scripts
+import data as dt
+
 # ------------------------------------------------------------------------------------ READ FUTURES FILE -- # 
 # ------------------------------------------------------------------------------------------------------ -- #
 
@@ -21,20 +24,24 @@ import pandas as pd
 file_route = 'files/prices/MP_H1.txt'
 
 # Read files and prepare format
-data_f = pd.read_csv(file_route, header=None, names=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+data_futures = pd.read_csv(file_route, header=None,
+                           names=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
 
 # Conversion from Usd per Mxn to Mxn per Usd
-data_f['timestamp'] = pd.to_datetime(data_f['timestamp'])
-data_f['open'] = round(1/data_f['open'], 5)
-data_f['high'] = round(1/data_f['high'], 5)
-data_f['low'] = round(1/data_f['low'], 5)
-data_f['close'] = round(1/data_f['close'], 5)
+data_futures['timestamp'] = pd.to_datetime(data_futures['timestamp'])
+data_futures['open'] = round(1/data_futures['open'], 5)
+data_futures['high'] = round(1/data_futures['high'], 5)
+data_futures['low'] = round(1/data_futures['low'], 5)
+data_futures['close'] = round(1/data_futures['close'], 5)
 
 # Swap high and low since the exchange rate was swapped from MXNUSD to USDMXN
-low = data_f['low'].copy()
-high = data_f['high'].copy()
-data_f['high'] = low
-data_f['low'] = high
+low = data_futures['low'].copy()
+high = data_futures['high'].copy()
+data_futures['high'] = low
+data_futures['low'] = high
 
 # Clean memory for these dummy objects
 high, low = None, None
+
+# -------------------------------------------------------------------------------------- RESAMPLE PRICES -- #
+futures_data = dt.resample_data(target_data=data_futures.copy(), target_freq='8H', auto_names=True, col_names=None)
