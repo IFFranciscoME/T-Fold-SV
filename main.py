@@ -16,15 +16,24 @@ import pandas as pd
 
 # -- Load other scripts
 import data as dt
+from continuous_futures import futures_data
 
 # ----- T-Fold V0.1 Process ----- # 
 # ------------------------------- #
 
 # -- 0. Load Global Dataset
+
+global_data = futures_data.copy()
+
 # -- 1. Folds Formation
+folds_data = dt.folds_formation(global_data=global_data, fold_size='year')
+
 # -- 2. Feature Engineering
 # -- 3. Information Assesment
 # -- 4. Learning Assesment
 # -- 5. Generalization Assesment
 
 # ------------------------------- #
+
+# -- 0. Load Global Dataset
+
