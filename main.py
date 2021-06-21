@@ -12,4 +12,19 @@
 """
 
 # -- Load libraries for script
-import numpy as np
+import pandas as pd
+
+# -- Load other scripts
+import data as dt
+
+# ----- T-Fold V0.1 Process ----- # 
+# ------------------------------- #
+
+# -- 0. Load Global Dataset
+# -- 1. Folds Formation
+# -- 2. Feature Engineering
+# -- 3. Information Assesment
+# -- 4. Learning Assesment
+# -- 5. Generalization Assesment
+
+# ------------------------------- #
