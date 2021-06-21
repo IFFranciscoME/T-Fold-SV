@@ -20,4 +20,4 @@ import numpy as np
 # Single value
 np.random.seed(123) 
 mu, sigma = 0.1, 0.1 # mean and standard deviation
-s = np.cumsum(np.random.normal(mu, sigma, 100))
+random_walk = np.cumsum(np.random.normal(mu, sigma, 100))
