@@ -18,10 +18,10 @@ import pandas as pd
 import data as dt
 
 # ------------------------------------------------------------------------------------ READ FUTURES FILE -- # 
-# ------------------------------------------------------------------------------------------------------ -- #
 
-# File route
-file_route = 'files/prices/MP_H1.txt'
+# File name and route
+file_name = 'MP_H1_2010_2021'
+file_route = 'files/prices/' + file_name + '.txt'
 
 # Read files and prepare format
 data_futures = pd.read_csv(file_route, header=None,
@@ -44,4 +44,7 @@ data_futures['low'] = high
 high, low = None, None
 
 # -------------------------------------------------------------------------------------- RESAMPLE PRICES -- #
-futures_data = dt.resample_data(target_data=data_futures.copy(), target_freq='8H', auto_names=True, col_names=None)
+
+# Downsample data
+futures_data = dt.resample_data(target_data=data_futures.copy(), target_freq='8H',
+                                auto_names=True, col_names=None)
