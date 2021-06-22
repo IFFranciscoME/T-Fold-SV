@@ -234,3 +234,44 @@ def _kld_gamma(p_data, q_data):
 
     # Final Kullback-Leibler Divergence for Empirically Adjusted Gamma PDFs
     return r_kld
+
+# ----------------------------------------------------------------------------- OHLC FEATURE ENGINEERING -- #
+# --------------------------------------------------------------------------------------------------------- #
+
+def ohlc_features(ohlc_data, target_data):
+    """
+    Feature engineering for OHLC prices. A time check is performed to make sure the targets have exactly the same timestamps as the OHLC data.
+    
+    
+    Parameters
+    ----------
+
+    ohlc_data: dict
+        Dictionary with the OHLC data for every fold
+
+    target_data: dict
+        Dictionary with the target variables for every fold
+
+    """
+
+    # -- For every Fold check form the same timestamp-based index between targets and ohlc
+    
+    # elements to iterate
+    l_target = list(target_data.keys())
+    l_ohlc = list(ohlc_data.keys())
+
+    # first validation: The same amount of keys
+    if not len(l_target) == len(l_ohlc):
+        raise ValueError('The number of elements between targets and ohlc data must be the same')
+
+    # second validation: Exactly the same timestamp-based index for both ohlc and target data
+    for i in range(0, len(l_target)):
+        if any(list(ohlc_data[i].index) != list(target_data.index[i])):
+            raise IndexError('The index in both target and ohlc data must be exactly the same')
+
+    # -- Create linear features
+    # -- Create autoregressive features
+    # -- Create symbolic features
+    # -- Perform information leakage prevention
+
+    return 1
