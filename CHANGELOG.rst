@@ -2,18 +2,27 @@
 Changelog
 =========
 
----------------
-June, 9th, 2021
----------------
+------------
+21.June.2021
+------------
 
-- addition: File docstrings and general comments
-- addition: Image files for README.rst
+- Added: ``ohlc_labeling`` for target variable formation.
+- Modified: format and lables in `continuous_futures.py` and `synthetic.py`
+- Modified: ``kld`` to shift data to have positive values, docstrings, method and sub-methods visibility.
 
----------------
-June, 5th, 2021
----------------
+------------
+20.June.2021
+------------
 
-- (p) addition: RandomWalk Time Series Generator
-- (p) addition: Add a 10 year prices file
-- (p) addition: Train-Val-Test data split function for OHLC
-- (p) addition: T-Fold data split function for {'held-out', 'year', 'semester', 'quarter', 'month'}
+- Added: RandomWalk Time Series Generator (Basic version).
+- Added: 10+ years of OHLC prices + Volume Continuous Futures files (2010 - 2021) (UsdMxn and EurUsd).
+- Added: ``resample_data`` function for prices downsample based on timestamp.
+- Added: ``folds_formation`` to produce 'quarter', 'semester', 'year', '80-20' Fold sizes.
+- Added: ``kld`` to measure the divergence between two PDFs using Kullback-Liebler Divergence metric.
+
+------------
+09.June.2021
+------------
+
+- Added: File docstrings and general comments
+- Added: Image files for README.rst
