@@ -62,3 +62,13 @@ works using a licensed work, under the same license. Copyright and license notic
 must be preserved. Contributors provide an express grant of patent rights.*
 
 *Contact: For more information in reggards of this project, please contact francisco.me@iteso.mx*
+
+----------
+LaTeX Test
+----------
+
+$\hat{y_{t}} = \gamma_{t} + \sum_{t=0}^{T} \frac{1}{\beta7}$
+
+\begin{equation}
+    \hat{y_{t}} = \gamma_{t} + \sum_{t=0}^{T} \frac{1}{\beta7}
+\end{equation}
