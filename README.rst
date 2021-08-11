@@ -72,3 +72,6 @@ $\hat{y_{t}} = \gamma_{t} + \sum_{t=0}^{T} \frac{1}{\beta7}$
 \begin{equation}
     \hat{y_{t}} = \gamma_{t} + \sum_{t=0}^{T} \frac{1}{\beta7}
 \end{equation}
+
+.. math::
+    \hat{y_{t}} = \gamma_{t} + \sum_{t=0}^{T} \frac{1}{\beta7}
